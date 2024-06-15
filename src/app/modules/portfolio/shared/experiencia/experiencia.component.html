@@ -1,0 +1,19 @@
+<article
+  id="emprego"
+  class="timeline p-6 gap-2 rounded-lg bg-cinzaclaro opacity-25 relative"
+>
+  <div class="{{ exp.linha }}"></div>
+  <span
+    class="font-primario text-xl md:text-2xl font-bold"
+    [innerHTML]="exp.titulo"
+  ></span>
+  <p
+    class="font-sans text-xs md:text-base font-bold"
+    [innerHTML]="exp.cargo"
+  ></p>
+  <p class="font-sans text-xs md:text-base" [innerHTML]="exp.descricao"></p>
+  <span
+    class="text-azul text-xs md:text-base font-bold font-sans"
+    [innerHTML]="exp.data"
+  ></span>
+</article>

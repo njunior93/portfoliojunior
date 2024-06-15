@@ -1,0 +1,93 @@
+<article
+  class="p-6 gap-2 grid grid-cols-[auto_1fr] rounded-lg hover:bg-cinzaclaro"
+>
+  <div class="w-10 grid justify-end text-[--cor-cinza-info]">
+    <span [innerHTML]="post.icone | safeHtml"></span>
+  </div>
+  <div class="text-xs text-[--cor-cinza-info] items-center">
+    <span class="font-bold">{{ post.textoIcone }}</span>
+  </div>
+  <a href="/" class="w-10 h-10">
+    <img
+      src="/assets/fotos/perfilpost.png"
+      alt="Foto do perfil post"
+      width="40"
+      height="40"
+      loading="lazy"
+      class="rounded-full"
+    />
+  </a>
+  <div class="flex flex-col gap-y-1">
+    <div
+      class="flex flex-row gap-x-1 text-text-1 items-center text-text-4"
+      style="text-decoration-thickness: 4px"
+    >
+      <a
+        href=""
+        class="font-bold text-text-1 text-base font-secundario hover:underline"
+      >
+        Junior
+      </a>
+      <div class="flex flex-row gap-1 items-center">
+        <img
+          alt="icone de verificado no post"
+          src="/assets/correto.png"
+          width="20"
+          height="20"
+        />
+        👨‍💻
+      </div>
+      <span class="text-2xl">•</span>
+      <time class="text-fluid--2 text-xs text-[--cor-cinza-info]">{{
+        post.data
+      }}</time>
+    </div>
+    @if (post.informacao) {
+      <span
+        class="bg-cinzaescuro px-3 py-1 rounded-full w-fit font-bold font-primario text-xs"
+        [innerHTML]="post.informacao | safeHtml"
+        >{{ post.informacao }}</span
+      >
+    }
+    <span class="text-xl md:text-2xl font-primario" style="font-weight: 700">{{
+      post.titulo
+    }}</span>
+    <p
+      class="mb-4 font-sans text-xs md:text-base leading-tight"
+      [innerHTML]="post.texto | safeHtml"
+    ></p>
+    <img
+      src="{{ post.src }}"
+      alt="{{ post.alt }}"
+      width="529"
+      height="352"
+      loading="lazy"
+      class="rounded-lg"
+    />
+    <div class="flex flex-row justify-end">
+      @if (post.iconeLink) {
+        <div
+          tabindex="0"
+          class="grid place-items-center mt-3 mr-2 cursor-pointer w-10 h-10 hover:bg-cinzaescuro rounded-md hover:text-azul"
+          (click)="openDialog(post)"
+          (keydown)="onKeydown($event, post)"
+        >
+          <span [innerHTML]="post.iconeLink | safeHtml"></span>
+        </div>
+      } @else {}
+      <div class="flex justify-end items-center mt-3 mr-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="var(--cor-cinca-icone)"
+        >
+          <path
+            d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</article>

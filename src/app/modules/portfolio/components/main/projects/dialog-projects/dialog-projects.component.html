@@ -1,0 +1,43 @@
+<div class="flex flex-col justify-center items-center bg-cinzaclaro p-5">
+  <header class="w-full flex justify-end px-5">
+    <button class="rounded-full bg-azul" (click)="closeModal()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#F1F3F5"
+      >
+        <path
+          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+        />
+      </svg>
+    </button>
+  </header>
+
+  <mat-dialog-content>
+    <article
+      class="font-sans leading-tight text-justify text-[--cor-text-black] text-base md:text-lg"
+      [innerHTML]="getData()?.textoDialog"
+    ></article>
+  </mat-dialog-content>
+
+  <nav class="flex flex-row justify-center gap-2">
+    @for (pro of getData()?.projeto; track pro) {
+      @if (pro.deploy !== '') {
+        <a
+          class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-xs md:text-base"
+          [href]="pro.deploy"
+          target="_blank"
+          >Deploy</a
+        >
+      } @else {}
+      <a
+        class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-xs md:text-base"
+        [href]="pro.href"
+        target="_blank"
+        >Repositório</a
+      >
+    }
+  </nav>
+</div>

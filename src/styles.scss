@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+:root .dark-theme {
+  --cor-primary: #f8f9fa;
+  --cor-bd: #16191d;
+  --cor-text-black: #f8f9fa;
+  --cor-bg-nav: rgba(22, 25, 29, 0.3);
+  --borda-bt: inset 0 0 0 4px white;
+  --cor-bg-post: #212529;
+  --cor-cinza-escuro: #495057;
+  --cor-cinza-info: #868e96;
+  --cor-cinca-icone: #474b4f;
+}
+
+:root {
+  --cor-primary: #000000;
+  --cor-bd: #f8f9fa;
+  --cor-bg-post: #f1f3f5;
+  --borda-bt: inset 0 0 0 4px black;
+  --cor-bg-nav: rgb(248, 249, 250, 0.3);
+  --cor-cinza-escuro: #dee2e6;
+  --cor-cinza-info: #495057;
+  --cor-cinca-icone: #c5c7ca;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: var(--cor-bd);
+  color: var(--cor-text-black);
+}

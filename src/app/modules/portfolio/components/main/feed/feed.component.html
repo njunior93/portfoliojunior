@@ -1,0 +1,9 @@
+<div class="pt-8">
+  <ul class="flex flex-col gap-y-4 justify-center">
+    @for (item of arrayPosts(); track item) {
+      <li>
+        <app-post [post]="item" />
+      </li>
+    }
+  </ul>
+</div>
