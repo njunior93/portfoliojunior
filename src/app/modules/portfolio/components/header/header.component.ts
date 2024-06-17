@@ -38,6 +38,10 @@ export class HeaderComponent implements AfterViewInit {
     });
   }
 
+  isDesktop(): boolean{
+    return window.innerWidth >= 768
+  }
+
   ngAfterViewInit() {
     const logocapa = document.getElementById('logocapa');
     const olhodireito = document.getElementById('direito');
@@ -83,7 +87,11 @@ export class HeaderComponent implements AfterViewInit {
 
     const eyeMovementRadius = 20;
 
+
     document.addEventListener('mousemove', (e) => {
+      if(window.innerWidth >= 768){
+        
+      }
       const svgRect = svg?.getBoundingClientRect();
       const logoRect = logocapa?.getBoundingClientRect();
       if (logocapa && olhodireito && olhoesquerdo && svgRect && logoRect) {

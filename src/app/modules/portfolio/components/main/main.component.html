@@ -1,10 +1,10 @@
 <main class="container mx-auto pt-5 mt-10 md:w-[724px] md:px-12">
   <ul
-    class="tabs-container max-w-full overflow-auto grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1"
+    class="tabs-container max-w-full overflow-auto grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1 px-2 md:px-0 "
   >
     <li
       tabindex="0"
-      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-xs md:text-base text-[--cor-cinza-info]"
+      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-sm md:text-base text-[--cor-cinza-info]"
       (click)="onTabClick('Publicacoes')"
       (keydown)="onKeydown($event, 'Publicacoes')"
     >
@@ -14,7 +14,7 @@
     </li>
     <li
       tabindex="0"
-      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-xs md:text-base text-[--cor-cinza-info]"
+      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-sm md:text-base text-[--cor-cinza-info]"
       (click)="onTabClick('Sobre')"
       (keydown)="onKeydown($event, 'Sobre')"
     >
@@ -24,7 +24,7 @@
     </li>
     <li
       tabindex="0"
-      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-xs md:text-base text-[--cor-cinza-info]"
+      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-sm md:text-base text-[--cor-cinza-info]"
       (click)="onTabClick('Projetos')"
       (keydown)="onKeydown($event, 'Projetos')"
     >
@@ -34,7 +34,7 @@
     </li>
     <li
       tabindex="0"
-      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-xs md:text-base text-[--cor-cinza-info]"
+      class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-sm md:text-base text-[--cor-cinza-info]"
       (click)="onTabClick('Experiencia')"
       (keydown)="onKeydown($event, 'Experiencia')"
     >

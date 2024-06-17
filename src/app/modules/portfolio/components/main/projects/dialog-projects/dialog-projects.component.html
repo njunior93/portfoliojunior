@@ -26,14 +26,14 @@
     @for (pro of getData()?.projeto; track pro) {
       @if (pro.deploy !== '') {
         <a
-          class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-xs md:text-base"
+          class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-sm md:text-base"
           [href]="pro.deploy"
           target="_blank"
           >Deploy</a
         >
       } @else {}
       <a
-        class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-xs md:text-base"
+        class="rounded-full bg-azul px-4 py-2 text-fluid--1 text-white border-text-1 flex flex-row items-center hover:shadow-inner-border text-sm md:text-base"
         [href]="pro.href"
         target="_blank"
         >Repositório</a
