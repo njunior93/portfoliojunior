@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Howl } from 'howler';
+import { repeat } from 'rxjs';
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -40,29 +41,42 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
 
   ngOnInit(){
     if(window.innerWidth <= 768){
+      const logocapa = document.getElementById('logocapa');
       const olhodireito = document.getElementById('direito');
       const olhoesquerdo = document.getElementById('esquerdo');
+
+      gsap.to(logocapa,{
+        repeat: -1,
+        x: '+=5',
+        ease: 'power1.inOut',
+        yoyo: true,
+        repeatDelay: 1.7    
+      });
       
       gsap.to(olhodireito,{
         y:'+=2',
+        x: '+=5',
         scaleY: 0.1,
         duration: 0.2,
         repeat: -1,
         yoyo: true,
         ease: 'power1.inOut',
-        repeatDelay: 1.8
+        repeatDelay: 2
+
       });
       
       gsap.to(olhoesquerdo,{
         y:'+=2',
+        x: '+=5',
         scaleY: 0.1,
         duration: 0.2,
         repeat: -1,
         yoyo: true,
         ease: 'power1.inOut',
-        repeatDelay: 1.8
+        repeatDelay: 2
 
       });
+
     }
   }
 
@@ -119,17 +133,17 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
           const mouseX = e.clientX - svgRect.left;
           const mouseY = e.clientY - svgRect.top;
 
-          const posicaoolhoesquerdo = { x: 368, y: 128 };
-          const posicaoolhodireito = { x: 390, y: 128 };
+          const posicaoolhoesquerdo = { x: 358, y: 128 };
+          const posicaoolhodireito = { x: 398, y: 128 };
 
           const dxLeft =
-            ((mouseX - posicaoolhoesquerdo.x) / logoRect.width) * 1.5;
+            ((mouseX - posicaoolhoesquerdo.x) / logoRect.width) * 2;
           const dyLeft =
-            ((mouseY - posicaoolhoesquerdo.y) / logoRect.height) * 1.5;
+            ((mouseY - posicaoolhoesquerdo.y) / logoRect.height) * 3;
           const dxRight =
-            ((mouseX - posicaoolhodireito.x) / logoRect.width) * 1.5;
+            ((mouseX - posicaoolhodireito.x) / logoRect.width) * 2;
           const dyRight =
-            ((mouseY - posicaoolhodireito.y) / logoRect.height) * 1.5;
+            ((mouseY - posicaoolhodireito.y) / logoRect.height) * 3;
 
           const distanceLeft = Math.sqrt(dxLeft * dxLeft + dyLeft * dyLeft);
           const distanceRight = Math.sqrt(dxRight * dxRight + dyRight * dyRight);
