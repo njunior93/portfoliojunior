@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +28,7 @@ gsap.registerPlugin(MotionPathPlugin);
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent implements AfterViewInit, OnInit  {
   form: FormGroup;
   submitted = false;
 
@@ -38,8 +38,32 @@ export class HeaderComponent implements AfterViewInit {
     });
   }
 
-  isDesktop(): boolean{
-    return window.innerWidth >= 768
+  ngOnInit(){
+    if(window.innerWidth <= 768){
+      const olhodireito = document.getElementById('direito');
+      const olhoesquerdo = document.getElementById('esquerdo');
+      
+      gsap.to(olhodireito,{
+        y:'+=2',
+        scaleY: 0.1,
+        duration: 0.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        repeatDelay: 1.8
+      });
+      
+      gsap.to(olhoesquerdo,{
+        y:'+=2',
+        scaleY: 0.1,
+        duration: 0.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        repeatDelay: 1.8
+
+      });
+    }
   }
 
   ngAfterViewInit() {
@@ -87,59 +111,58 @@ export class HeaderComponent implements AfterViewInit {
 
     const eyeMovementRadius = 20;
 
-
     document.addEventListener('mousemove', (e) => {
       if(window.innerWidth >= 768){
-        
+        const svgRect = svg?.getBoundingClientRect();
+        const logoRect = logocapa?.getBoundingClientRect();
+        if (logocapa && olhodireito && olhoesquerdo && svgRect && logoRect) {
+          const mouseX = e.clientX - svgRect.left;
+          const mouseY = e.clientY - svgRect.top;
+
+          const posicaoolhoesquerdo = { x: 368, y: 128 };
+          const posicaoolhodireito = { x: 390, y: 128 };
+
+          const dxLeft =
+            ((mouseX - posicaoolhoesquerdo.x) / logoRect.width) * 1.5;
+          const dyLeft =
+            ((mouseY - posicaoolhoesquerdo.y) / logoRect.height) * 1.5;
+          const dxRight =
+            ((mouseX - posicaoolhodireito.x) / logoRect.width) * 1.5;
+          const dyRight =
+            ((mouseY - posicaoolhodireito.y) / logoRect.height) * 1.5;
+
+          const distanceLeft = Math.sqrt(dxLeft * dxLeft + dyLeft * dyLeft);
+          const distanceRight = Math.sqrt(dxRight * dxRight + dyRight * dyRight);
+
+          const moveLeftX =
+            Math.min(eyeMovementRadius, distanceLeft) *
+            (dxLeft / distanceLeft || 0);
+          const moveLeftY =
+            Math.min(eyeMovementRadius, distanceLeft) *
+            (dyLeft / distanceLeft || 0);
+
+          const moveRightX =
+            Math.min(eyeMovementRadius, distanceRight) *
+            (dxRight / distanceRight || 0);
+          const moveRightY =
+            Math.min(eyeMovementRadius, distanceRight) *
+            (dyRight / distanceRight || 0);
+
+          gsap.to(olhoesquerdo, {
+            duration: 0.5,
+            cx: posicaoolhoesquerdo.x + moveLeftX,
+            cy: posicaoolhoesquerdo.y + moveLeftY,
+            ease: 'power2.out',
+          });
+          gsap.to(olhodireito, {
+            duration: 0.5,
+            cx: posicaoolhodireito.x + moveRightX,
+            cy: posicaoolhodireito.y + moveRightY,
+            ease: 'power2.out',
+          });
+        }
       }
-      const svgRect = svg?.getBoundingClientRect();
-      const logoRect = logocapa?.getBoundingClientRect();
-      if (logocapa && olhodireito && olhoesquerdo && svgRect && logoRect) {
-        const mouseX = e.clientX - svgRect.left;
-        const mouseY = e.clientY - svgRect.top;
-
-        const posicaoolhoesquerdo = { x: 368, y: 128 };
-        const posicaoolhodireito = { x: 390, y: 128 };
-
-        const dxLeft =
-          ((mouseX - posicaoolhoesquerdo.x) / logoRect.width) * 1.5;
-        const dyLeft =
-          ((mouseY - posicaoolhoesquerdo.y) / logoRect.height) * 1.5;
-        const dxRight =
-          ((mouseX - posicaoolhodireito.x) / logoRect.width) * 1.5;
-        const dyRight =
-          ((mouseY - posicaoolhodireito.y) / logoRect.height) * 1.5;
-
-        const distanceLeft = Math.sqrt(dxLeft * dxLeft + dyLeft * dyLeft);
-        const distanceRight = Math.sqrt(dxRight * dxRight + dyRight * dyRight);
-
-        const moveLeftX =
-          Math.min(eyeMovementRadius, distanceLeft) *
-          (dxLeft / distanceLeft || 0);
-        const moveLeftY =
-          Math.min(eyeMovementRadius, distanceLeft) *
-          (dyLeft / distanceLeft || 0);
-
-        const moveRightX =
-          Math.min(eyeMovementRadius, distanceRight) *
-          (dxRight / distanceRight || 0);
-        const moveRightY =
-          Math.min(eyeMovementRadius, distanceRight) *
-          (dyRight / distanceRight || 0);
-
-        gsap.to(olhoesquerdo, {
-          duration: 0.5,
-          cx: posicaoolhoesquerdo.x + moveLeftX,
-          cy: posicaoolhoesquerdo.y + moveLeftY,
-          ease: 'power2.out',
-        });
-        gsap.to(olhodireito, {
-          duration: 0.5,
-          cx: posicaoolhodireito.x + moveRightX,
-          cy: posicaoolhodireito.y + moveRightY,
-          ease: 'power2.out',
-        });
-      }
+      
     });
   }
 
