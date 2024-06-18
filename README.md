@@ -3,4 +3,6 @@
 
 [![My Skills](https://skillicons.dev/icons?i=angular)](https://skillicons.dev)
 
-Sistema com pagina responsiva feito em TypeScript usando a ferramenta React. A principal finalidade foi colocar em pratica a minha iniciação aos estudos a ferramentas do JavaScript e avançar cada vez mais na linguagem. Para conferir, clicar na imagem abaixo:
+Portfolio feito, usando Angular e TypeScript, com intuito de mostrar meus conhecimentos e praticas. E como uma das finalidades em praticar tecnologias como: tailwind css, angular ui e typescript.
+
+
