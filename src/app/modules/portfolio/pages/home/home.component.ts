@@ -36,7 +36,7 @@ export class HomeComponent implements AfterViewInit {
     const botao_flutuante = document.querySelector('.botao-flutuante');
     const botao = document.querySelector('.botao');
 
-    Draggable.create(botao_flutuante, {
+    Draggable.create(botao, {
       bounds: '.botaoZona',
       inertia: true,
       onDragStart: function () {
