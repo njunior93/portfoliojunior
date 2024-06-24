@@ -39,30 +39,6 @@ export class ExperienciasComponent implements AfterViewInit {
       );
     });
 
-    gsap.utils.toArray('.linha-timeline').forEach((linha: any) => {
-      gsap.set(linha, {
-        transformOrigin: 'top 0',
-        xPercent: -50,
-        x: 0,
-      });
-
-      gsap.fromTo(
-        linha,
-        {
-          scaleY: 0,
-        },
-        {
-          scaleY: 0.5,
-          scrollTrigger: {
-            trigger: linha,
-            start: 'top 59%',
-            end: 'top 59.8%',
-            toggleActions: 'play reverse play reverse',
-            scrub: true,
-          },
-        },
-      );
-    });
   }
 
   public animacaoMobile() {
@@ -88,30 +64,6 @@ export class ExperienciasComponent implements AfterViewInit {
       );
     });
 
-    gsap.utils.toArray('.linha-timeline').forEach((linha: any) => {
-      gsap.set(linha, {
-        transformOrigin: 'top 0',
-        xPercent: -50,
-        x: 0,
-      });
-
-      gsap.fromTo(
-        linha,
-        {
-          scaleY: 0,
-        },
-        {
-          scaleY: 0.5,
-          scrollTrigger: {
-            trigger: linha,
-            start: 'top 36%',
-            end: 'top 34.8%',
-            toggleActions: 'play reverse play reverse',
-            scrub: true,
-          },
-        },
-      );
-    });
   }
 
   public checkTamanhoTela() {
