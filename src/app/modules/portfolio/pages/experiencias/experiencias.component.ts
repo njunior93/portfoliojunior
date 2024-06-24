@@ -79,8 +79,8 @@ export class ExperienciasComponent implements AfterViewInit {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: emprego,
-            start: 'top 48%',
-            end: 'top 47.9%',
+            start: 'top 50%',
+            end: 'top 48.9%',
             toggleActions: 'play reverse play reverse',
             scrub: 2,
           },
@@ -104,7 +104,7 @@ export class ExperienciasComponent implements AfterViewInit {
           scaleY: 0.5,
           scrollTrigger: {
             trigger: linha,
-            start: 'top 35%',
+            start: 'top 36%',
             end: 'top 34.8%',
             toggleActions: 'play reverse play reverse',
             scrub: true,
