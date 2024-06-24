@@ -3,18 +3,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FeedComponent } from './feed/feed.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SobreComponent } from './sobre/sobre.component';
-import { ExperienciasComponent } from './experiencias/experiencias.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [
-    MatTabsModule,
-    FeedComponent,
-    ProjectsComponent,
-    SobreComponent,
-    ExperienciasComponent,
-  ],
+  imports: [MatTabsModule, FeedComponent, ProjectsComponent, SobreComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
   encapsulation: ViewEncapsulation.None,

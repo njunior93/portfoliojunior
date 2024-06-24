@@ -1,0 +1,21 @@
+<app-nav />
+
+<div class="empregos flex flex-col gap-1 justify-center items-center">
+  <div class="flex justify-start md:w-1/2">
+    <a
+      href="/"
+      class="font-bold text-base text-[#CC0088] hover:underline"
+      style="text-decoration-thickness: 4px"
+      >Inicio</a
+    >
+  </div>
+  <ul class="flex flex-col gap-y-4 w-9/12 md:w-1/2">
+    @for (item of arrayExp(); track item) {
+      <li>
+        <app-experiencia [exp]="item" />
+      </li>
+    }
+  </ul>
+</div>
+
+<app-footer />

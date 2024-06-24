@@ -1,20 +1,22 @@
-import { AfterViewInit, Component, signal } from '@angular/core';
-import { IExp } from '../../../interface/Exp.interface';
-import { ExperienciaComponent } from '../../../shared/experiencia/experiencia.component';
+import { AfterViewInit, Component, OnInit, signal } from '@angular/core';
+import { IExp } from '../..//interface/Exp.interface';
+import { ExperienciaComponent } from '../../shared/experiencia/experiencia.component';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { NavComponent } from '../../components/nav/nav.component';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-experiencias',
   standalone: true,
-  imports: [ExperienciaComponent],
+  imports: [NavComponent, ExperienciaComponent, FooterComponent],
   templateUrl: './experiencias.component.html',
   styleUrl: './experiencias.component.scss',
 })
 export class ExperienciasComponent implements AfterViewInit {
-  ngAfterViewInit() {
+  public animacaoDesktop() {
     (gsap.utils.toArray('#emprego') as HTMLElement[]).forEach((emprego, i) => {
       gsap.fromTo(
         emprego,
@@ -28,10 +30,11 @@ export class ExperienciasComponent implements AfterViewInit {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: emprego,
-            start: 'top 70%',
-            end: 'top 69.8%',
+            start: 'top 68%',
+            end: 'top 65.9%',
             toggleActions: 'play reverse play reverse',
             scrub: 2,
+            markers: true,
           },
         },
       );
@@ -63,9 +66,70 @@ export class ExperienciasComponent implements AfterViewInit {
     });
   }
 
+  public animacaoMobile() {
+    (gsap.utils.toArray('#emprego') as HTMLElement[]).forEach((emprego, i) => {
+      gsap.fromTo(
+        emprego,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 4,
+          delay: i * 2,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: emprego,
+            start: 'top 48%',
+            end: 'top 47.9%',
+            toggleActions: 'play reverse play reverse',
+            scrub: 2,
+          },
+        },
+      );
+    });
+
+    gsap.utils.toArray('.linha-timeline').forEach((linha: any) => {
+      gsap.set(linha, {
+        transformOrigin: 'top 0',
+        xPercent: -50,
+        x: 0,
+      });
+
+      gsap.fromTo(
+        linha,
+        {
+          scaleY: 0,
+        },
+        {
+          scaleY: 0.5,
+          scrollTrigger: {
+            trigger: linha,
+            start: 'top 35%',
+            end: 'top 34.8%',
+            toggleActions: 'play reverse play reverse',
+            scrub: true,
+          },
+        },
+      );
+    });
+  }
+
+  public checkTamanhoTela() {
+    if (window.innerWidth >= 768) {
+      this.animacaoDesktop();
+    } else {
+      this.animacaoMobile();
+    }
+  }
+
+  ngAfterViewInit() {
+    this.checkTamanhoTela();
+  }
+
   public arrayExp = signal<IExp[]>([
     {
-      titulo: 'Charmim.com confecções de peças vestuário Ltda',
+      titulo: 'Charmim.com',
       cargo: 'Assistente administrativo',
       data: 'Fev de 2013 - Nov de 2014',
       descricao:

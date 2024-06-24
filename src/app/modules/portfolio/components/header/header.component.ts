@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import { Howl } from 'howler';
-import { repeat } from 'rxjs';
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -29,7 +28,7 @@ gsap.registerPlugin(MotionPathPlugin);
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements AfterViewInit, OnInit  {
+export class HeaderComponent implements AfterViewInit, OnInit {
   form: FormGroup;
   submitted = false;
 
@@ -39,44 +38,41 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
     });
   }
 
-  ngOnInit(){
-    if(window.innerWidth <= 768){
+  ngOnInit() {
+    if (window.innerWidth <= 768) {
       const logocapa = document.getElementById('logocapa');
       const olhodireito = document.getElementById('direito');
       const olhoesquerdo = document.getElementById('esquerdo');
 
-      gsap.to(logocapa,{
+      gsap.to(logocapa, {
         repeat: -1,
         x: '+=5',
         ease: 'power1.inOut',
         yoyo: true,
-        repeatDelay: 1.7    
+        repeatDelay: 1.7,
       });
-      
-      gsap.to(olhodireito,{
-        y:'+=2',
-        x: '+=5',
-        scaleY: 0.1,
-        duration: 0.2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut',
-        repeatDelay: 2
 
-      });
-      
-      gsap.to(olhoesquerdo,{
-        y:'+=2',
+      gsap.to(olhodireito, {
+        y: '+=2',
         x: '+=5',
         scaleY: 0.1,
         duration: 0.2,
         repeat: -1,
         yoyo: true,
         ease: 'power1.inOut',
-        repeatDelay: 2
-
+        repeatDelay: 2,
       });
 
+      gsap.to(olhoesquerdo, {
+        y: '+=2',
+        x: '+=5',
+        scaleY: 0.1,
+        duration: 0.2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut',
+        repeatDelay: 2,
+      });
     }
   }
 
@@ -126,7 +122,7 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
     const eyeMovementRadius = 20;
 
     document.addEventListener('mousemove', (e) => {
-      if(window.innerWidth >= 768){
+      if (window.innerWidth >= 768) {
         const svgRect = svg?.getBoundingClientRect();
         const logoRect = logocapa?.getBoundingClientRect();
         if (logocapa && olhodireito && olhoesquerdo && svgRect && logoRect) {
@@ -146,7 +142,9 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
             ((mouseY - posicaoolhodireito.y) / logoRect.height) * 3;
 
           const distanceLeft = Math.sqrt(dxLeft * dxLeft + dyLeft * dyLeft);
-          const distanceRight = Math.sqrt(dxRight * dxRight + dyRight * dyRight);
+          const distanceRight = Math.sqrt(
+            dxRight * dxRight + dyRight * dyRight,
+          );
 
           const moveLeftX =
             Math.min(eyeMovementRadius, distanceLeft) *
@@ -176,7 +174,6 @@ export class HeaderComponent implements AfterViewInit, OnInit  {
           });
         }
       }
-      
     });
   }
 

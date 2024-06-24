@@ -1,6 +1,6 @@
 <main class="container mx-auto pt-5 mt-10 md:w-[724px] md:px-12">
   <ul
-    class="tabs-container max-w-full overflow-auto grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1 px-2 md:px-0 "
+    class="tabs-container max-w-full overflow-auto grid grid-flow-col auto-cols-[1fr] items-center text-fluid--1 px-2 md:px-0"
   >
     <li
       tabindex="0"
@@ -8,7 +8,7 @@
       (click)="onTabClick('Publicacoes')"
       (keydown)="onKeydown($event, 'Publicacoes')"
     >
-      <span class="p-1 md:p-2" [class.active]="activeTab === 'Publicacoes'"
+      <span class="p-2" [class.active]="activeTab === 'Publicacoes'"
         >Publicações</span
       >
     </li>
@@ -18,9 +18,7 @@
       (click)="onTabClick('Sobre')"
       (keydown)="onKeydown($event, 'Sobre')"
     >
-      <span class="p-1 md:p-2" [class.active]="activeTab === 'Sobre'"
-        >Sobre</span
-      >
+      <span class="p-2" [class.active]="activeTab === 'Sobre'">Sobre</span>
     </li>
     <li
       tabindex="0"
@@ -28,11 +26,11 @@
       (click)="onTabClick('Projetos')"
       (keydown)="onKeydown($event, 'Projetos')"
     >
-      <span class="p-1 md:p-2" [class.active]="activeTab === 'Projetos'"
+      <span class="p-2" [class.active]="activeTab === 'Projetos'"
         >Projetos</span
       >
     </li>
-    <li
+    <!-- <li
       tabindex="0"
       class="cursor-pointer w-full h-full grid place-items-center hover:bg-cinzaclaro font-primario font-bold text-sm md:text-base text-[--cor-cinza-info]"
       (click)="onTabClick('Experiencia')"
@@ -41,7 +39,7 @@
       <span class="p-1 md:p-2" [class.active]="activeTab === 'Experiencia'"
         >Experiências</span
       >
-    </li>
+    </li> -->
   </ul>
 
   <div>
@@ -51,8 +49,9 @@
       <app-sobre />
     } @else if (activeTab === 'Projetos') {
       <app-projects />
-    } @else {
-      <app-experiencias />
     }
+    <!-- } @else {
+      <app-experiencias />
+    } -->
   </div>
 </main>
