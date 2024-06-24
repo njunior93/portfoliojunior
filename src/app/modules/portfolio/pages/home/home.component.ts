@@ -6,7 +6,6 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,14 +21,6 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements AfterViewInit {
-
-  constructor(private router: Router) { }
-
-  paginaExperiencia() {
-    this.router.navigate(['/experiencias']).then(() => {
-      window.scrollTo(0, 0);
-    });
-  }
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(Draggable);
