@@ -36,15 +36,15 @@ export class HomeComponent implements AfterViewInit {
     const botao_flutuante = document.querySelector('.botao-flutuante');
     const botao = document.querySelector('.botao');
 
-    Draggable.create(botao, {
+    Draggable.create(botao_flutuante, {
       bounds: '.botaoZona',
       inertia: true,
-      // onDragStart: function () {
-      //   this['target'].style.zIndex = 50;
-      // },
-      // onDragEnd: function () {
-      //   this['target'].style.zIndex = 10;
-      // },
+      onDragStart: function () {
+        this['target'].style.zIndex = 50;
+      },
+      onDragEnd: function () {
+        this['target'].style.zIndex = 10;
+      },
     });
 
     gsap.to(botao_flutuante, {
