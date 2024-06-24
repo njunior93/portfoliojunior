@@ -34,7 +34,6 @@ export class ExperienciasComponent implements AfterViewInit {
             end: 'top 65.9%',
             toggleActions: 'play reverse play reverse',
             scrub: 2,
-            markers: true,
           },
         },
       );
