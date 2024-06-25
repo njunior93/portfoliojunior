@@ -87,7 +87,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
       // },
     });
 
-    gsap.to(botao, {
+    gsap.to(botao_flutuante, {
       y: -20,
       duration: 1.5,
       repeat: -1,
