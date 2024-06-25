@@ -28,7 +28,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   iniciarNotificacao() {
     setInterval(() => {
       this.mostrarNotificacao();
-    }, 5000);
+    }, 4000);
   }
 
   ngOnInit() {
