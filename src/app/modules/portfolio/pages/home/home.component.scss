@@ -1,4 +1,9 @@
 .botao{
   cursor: pointer !important;
-  
+  z-index: 1;
+}
+
+.botao-flutuante{
+  position: relative;
+  z-index: 10;
 }
