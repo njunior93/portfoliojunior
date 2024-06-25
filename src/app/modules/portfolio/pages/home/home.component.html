@@ -7,8 +7,8 @@
 
 <app-footer />
 
-<a
-  href="/experiencias"
+<div
+  (click)="irExperiencias()"
   class="botao fixed transform top-2/3 left-2/3 h-14 w-14"
 >
   <div
@@ -19,7 +19,7 @@
       class="absolute bg-[#f9c74f] p-2 rounded-md translate-y-2/4 opacity-0 top-[20%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
     >
       <span class="text-base font-secundario whitespace-nowrap text-[#000000]"
-        >Experiencias aqui!</span
+        >Clique e veja minha experiencias!</span
       >
     </div>
     <div
@@ -43,4 +43,4 @@
       />
     </svg>
   </div>
-</a>
+</div>
