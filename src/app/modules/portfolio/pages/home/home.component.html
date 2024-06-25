@@ -7,14 +7,36 @@
 
 <app-footer />
 
-<a matTooltip="Experiências" href="/experiencias" class="botao fixed transform top-2/3 left-2/3 h-12 w-12">
-  <div class="botao-flutuante cursor-pointer rounded-full bg-[#CC0088] h-full w-full grid place-items-center"
+<a
+  matTooltip="Experiências"
+  href="/experiencias"
+  class="botao fixed transform top-2/3 left-2/3 h-14 w-14"
+>
+  <div
+    class="botao-flutuante hover:shadow-inner-border cursor-pointer rounded-full bg-[#CC0088] h-full w-full grid place-items-center"
   >
+    <div
+      id="notificacao1"
+      class="absolute bg-[#f9c74f] p-2 rounded-md translate-y-2/4 opacity-0 top-[20%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+    >
+      <span class="text-base font-secundario text-[#000000]"
+        >Veja minhas experiências!</span
+      >
+    </div>
+    <div
+      id="notificacao2"
+      class="absolute bg-[#f9c74f] p-2 text-center rounded-md translate-y-2/4 opacity-0 top-[20%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
+    >
+      <span class="text-base font-secundario whitespace-nowrap text-[#000000]"
+        >Segure e arraste</span
+      >
+    </div>
+
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="26px"
+      height="28px"
       viewBox="0 -960 960 960"
-      width="26px"
+      width="28px"
       fill="#FFFFFF"
     >
       <path

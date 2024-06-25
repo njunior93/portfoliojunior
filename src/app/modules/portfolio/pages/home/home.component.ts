@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { MainComponent } from '../../components/main/main.component';
 import { NavComponent } from '../../components/nav/nav.component';
@@ -6,6 +6,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +17,46 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MainComponent,
     FooterComponent,
     MatTooltipModule,
+    CommonModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
+  private notificacaoAtual: number = 1;
+
+  iniciarNotificacao() {
+    setInterval(() => {
+      this.mostrarNotificacao();
+    }, 5000);
+  }
+
+  ngOnInit() {
+    this.iniciarNotificacao();
+  }
+
+  mostrarNotificacao() {
+    const notificacaoId = `notificacao${this.notificacaoAtual}`;
+    this.notificacaoAtual = this.notificacaoAtual === 1 ? 2 : 1;
+    const notificacao = document.getElementById(notificacaoId);
+
+    if (notificacao) {
+      gsap.to(notificacao, {
+        duration: 0.5,
+        opacity: 1,
+        y: -50,
+        ease: 'power1.inOut',
+        onComplete: () => {
+          gsap.to(notificacao, {
+            duration: 0.5,
+            opacity: 0,
+            y: 0,
+            delay: 1,
+          });
+        },
+      });
+    }
+  }
 
   ngAfterViewInit(): void {
     gsap.registerPlugin(Draggable);

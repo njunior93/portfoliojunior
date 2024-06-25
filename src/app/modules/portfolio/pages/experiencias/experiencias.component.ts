@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, signal } from '@angular/core';
 import { IExp } from '../..//interface/Exp.interface';
 import { ExperienciaComponent } from '../../shared/experiencia/experiencia.component';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -38,7 +38,6 @@ export class ExperienciasComponent implements AfterViewInit {
         },
       );
     });
-
   }
 
   public animacaoMobile() {
@@ -55,15 +54,14 @@ export class ExperienciasComponent implements AfterViewInit {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: emprego,
-            start: 'top 50%',
-            end: 'top 48.9%',
+            start: 'top 51%',
+            end: 'top 50%',
             toggleActions: 'play reverse play reverse',
             scrub: 2,
           },
         },
       );
     });
-
   }
 
   public checkTamanhoTela() {

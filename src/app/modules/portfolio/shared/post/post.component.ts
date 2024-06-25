@@ -40,7 +40,7 @@ export class PostComponent {
     this.#dialog.open(DialogProjectsComponent, {
       data,
       panelClass: 'dialog-container',
-      disableClose: true
+      disableClose: true,
     });
   }
 
