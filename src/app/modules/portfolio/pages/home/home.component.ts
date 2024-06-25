@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Draggable } from 'gsap/Draggable';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -24,15 +25,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements AfterViewInit, OnInit {
-
-  constructor(private router: Router, private viewportScroller: ViewportScroller) {}
+  constructor(
+    private router: Router,
+    private viewportScroller: ViewportScroller,
+  ) {}
 
   irExperiencias(): void {
     this.router.navigate(['/experiencias']).then(() => {
       this.viewportScroller.scrollToPosition([0, 0]);
     });
   }
-  
+
   private notificacaoAtual: number = 1;
 
   iniciarNotificacao() {
