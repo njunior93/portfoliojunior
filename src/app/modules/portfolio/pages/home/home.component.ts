@@ -79,12 +79,12 @@ export class HomeComponent implements AfterViewInit, OnInit {
     Draggable.create(botao, {
       bounds: '.botaoZona',
       inertia: true,
-      // onDragStart: function () {
-      //   this['target'].style.zIndex = 50;
-      // },
-      // onDragEnd: function () {
-      //   this['target'].style.zIndex = 10;
-      // },
+      onDragStart: function () {
+        this['target'].style.zIndex = 50;
+      },
+      onDragEnd: function () {
+        this['target'].style.zIndex = 10;
+      },
     });
 
     gsap.to(botao_flutuante, {
