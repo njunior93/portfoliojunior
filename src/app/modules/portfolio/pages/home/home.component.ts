@@ -5,10 +5,13 @@ import { NavComponent } from '../../components/nav/nav.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { gsap } from 'gsap';
 import { Router } from '@angular/router';
-import { Draggable } from 'gsap/Draggable';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 import { ViewportScroller } from '@angular/common';
+import {CdkDrag} from '@angular/cdk/drag-drop';
+
+
+
 
 @Component({
   selector: 'app-home',
@@ -20,20 +23,39 @@ import { ViewportScroller } from '@angular/common';
     FooterComponent,
     MatTooltipModule,
     CommonModule,
+    CdkDrag,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements AfterViewInit, OnInit {
+  private click: number = 0;
+  private duracaoClick: number = 0;
+  private tempoClick: number = 100;
+
+  
+  onMouseDown(event: MouseEvent): void {
+   this.click = new Date().getTime();
+  }
+
+  onMouseUp(event: MouseEvent): void {
+    const duracaoClickSoltar = new Date().getTime();
+    this.duracaoClick = duracaoClickSoltar - this.click;
+  }
+
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,
   ) {}
 
   irExperiencias(): void {
-    this.router.navigate(['/experiencias']).then(() => {
-      this.viewportScroller.scrollToPosition([0, 0]);
-    });
+    if(this.duracaoClick < this.tempoClick){
+
+      this.router.navigate(['/experiencias']).then(() => {
+        this.viewportScroller.scrollToPosition([0, 0]);
+      });
+
+    } 
   }
 
   private notificacaoAtual: number = 1;
@@ -41,7 +63,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   iniciarNotificacao() {
     setInterval(() => {
       this.mostrarNotificacao();
-    }, 4000);
+    }, 3000);
   }
 
   ngOnInit() {
@@ -72,20 +94,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    gsap.registerPlugin(Draggable);
     const botao_flutuante = document.querySelector('.botao-flutuante');
-    const botao = document.querySelector('.botao');
-
-    Draggable.create(botao, {
-      bounds: '.botaoZona',
-      inertia: true,
-      onDragStart: function () {
-        this['target'].style.zIndex = 50;
-      },
-      onDragEnd: function () {
-        this['target'].style.zIndex = 10;
-      },
-    });
 
     gsap.to(botao_flutuante, {
       y: -20,
