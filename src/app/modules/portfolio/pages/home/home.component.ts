@@ -45,6 +45,7 @@ export class HomeComponent implements AfterViewInit, OnInit {
     private viewportScroller: ViewportScroller,
   ) {}
 
+
   irExperiencias(): void {
     if (this.idIntervalo) {
       clearInterval(this.idIntervalo);
@@ -55,6 +56,12 @@ export class HomeComponent implements AfterViewInit, OnInit {
       this.router.navigate(['/experiencias']).then(() => {
         this.viewportScroller.scrollToPosition([0, 0]);
       });
+    }
+  }
+
+  onKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.irExperiencias();
     }
   }
 
