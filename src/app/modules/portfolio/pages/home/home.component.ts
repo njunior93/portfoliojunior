@@ -8,10 +8,7 @@ import { Router } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 import { ViewportScroller } from '@angular/common';
-import {CdkDrag} from '@angular/cdk/drag-drop';
-
-
-
+import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
@@ -32,13 +29,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
   private click: number = 0;
   private duracaoClick: number = 0;
   private tempoClick: number = 100;
+  private idIntervalo: any;
 
-  
-  onMouseDown(event: MouseEvent): void {
-   this.click = new Date().getTime();
+  onMouseDown(): void {
+    this.click = new Date().getTime();
   }
 
-  onMouseUp(event: MouseEvent): void {
+  onMouseUp(): void {
     const duracaoClickSoltar = new Date().getTime();
     this.duracaoClick = duracaoClickSoltar - this.click;
   }
@@ -49,19 +46,22 @@ export class HomeComponent implements AfterViewInit, OnInit {
   ) {}
 
   irExperiencias(): void {
-    if(this.duracaoClick < this.tempoClick){
+    if (this.idIntervalo) {
+      clearInterval(this.idIntervalo);
+      this.idIntervalo = null;
+    }
 
+    if (this.duracaoClick < this.tempoClick) {
       this.router.navigate(['/experiencias']).then(() => {
         this.viewportScroller.scrollToPosition([0, 0]);
       });
-
-    } 
+    }
   }
 
   private notificacaoAtual: number = 1;
 
   iniciarNotificacao() {
-    setInterval(() => {
+    this.idIntervalo = setInterval(() => {
       this.mostrarNotificacao();
     }, 3000);
   }

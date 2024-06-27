@@ -18,16 +18,15 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './experiencias.component.scss',
 })
 export class ExperienciasComponent implements AfterViewInit {
-
   constructor(
     private router: Router,
     private viewportScroller: ViewportScroller,
   ) {}
 
   irPrincipal(): void {
-      this.router.navigate(['/']).then(() => {
-        this.viewportScroller.scrollToPosition([0, 0]);
-      });
+    this.router.navigate(['/']).then(() => {
+      this.viewportScroller.scrollToPosition([0, 0]);
+    });
   }
 
   public animacaoDesktop() {
@@ -68,8 +67,8 @@ export class ExperienciasComponent implements AfterViewInit {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: emprego,
-            start: 'top 51%',
-            end: 'top 50%',
+            start: 'top 55%',
+            end: 'top 54.9%',
             toggleActions: 'play reverse play reverse',
             scrub: 2,
           },
