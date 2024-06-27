@@ -3,11 +3,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { FeedComponent } from './feed/feed.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SobreComponent } from './sobre/sobre.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [MatTabsModule, FeedComponent, ProjectsComponent, SobreComponent],
+  imports: [MatTabsModule, FeedComponent, ProjectsComponent, SobreComponent, MatBadgeModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
   encapsulation: ViewEncapsulation.None,
