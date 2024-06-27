@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { NavComponent } from '../../components/nav/nav.component';
+import { ViewportScroller } from '@angular/common';
+import { Router } from '@angular/router';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +18,18 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrl: './experiencias.component.scss',
 })
 export class ExperienciasComponent implements AfterViewInit {
+
+  constructor(
+    private router: Router,
+    private viewportScroller: ViewportScroller,
+  ) {}
+
+  irPrincipal(): void {
+      this.router.navigate(['/']).then(() => {
+        this.viewportScroller.scrollToPosition([0, 0]);
+      });
+  }
+
   public animacaoDesktop() {
     (gsap.utils.toArray('#emprego') as HTMLElement[]).forEach((emprego, i) => {
       gsap.fromTo(

@@ -17,7 +17,7 @@ module.exports = {
         primario: ['Poppins']
       },
       boxShadow: {
-        'inner-border': 'var(--borda-bt)' // Define a sombra interna
+        'inner-border': 'var(--borda-bt)'
       },
     },
   },
