@@ -47,15 +47,13 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
 
   irExperiencias(): void {
-    if (this.idIntervalo) {
-      clearInterval(this.idIntervalo);
-      this.idIntervalo = null;
-    }
 
-    if (this.duracaoClick < this.tempoClick) {
+    if (this.duracaoClick < this.tempoClick && this.idIntervalo) {
       this.router.navigate(['/experiencias']).then(() => {
         this.viewportScroller.scrollToPosition([0, 0]);
       });
+      clearInterval(this.idIntervalo);
+      this.idIntervalo = null;
     }
   }
 
