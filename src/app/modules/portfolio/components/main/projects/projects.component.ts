@@ -14,10 +14,8 @@ export class ProjectsComponent {
   public arrayProjects = signal<IPost[]>([
     {
       texto: 'MEU GRANDE PROJETO',
-      informacao:
-        '<a href="https://drive.google.com/file/d/1FD3y-1erQM-LB_XhE-cIRCxiNPUKfAcX/view?usp=sharing" target="_blank">🔗 /Video</a>',
-      textoDialog: 'Esse é só um spoiler do meu grande projeto! Ainda tem muito chão pela frente. Fiz o deploy da versão offline só pra dar um gostinho do que vem aí. O back-end ainda está em construção: <b>API em Node.js + TypeORM</b>, com persistência no PostgreSQL. Logo menos, a versão completa estará no ar!',
-      src: 'assets/posts/cadastroCRUD.jpg',
+      textoDialog: 'Esse é só um spoiler do meu grande projeto! Ainda tem muito chão pela frente. Fiz o deploy da versão offline só pra dar um gostinho do que vem aí. O back-end ainda está em construção: API em <b>Node.js + TypeORM</b>, com persistência no PostgreSQL. Logo menos, a versão completa estará no ar!',
+      src: 'assets/posts/projeto_hotifacil.jpg',
       data: '25 Set 2025',
       projeto: [
         {
