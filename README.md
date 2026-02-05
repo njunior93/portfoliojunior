@@ -1,10 +1,50 @@
-<h1>Meu Portfolio ✅ 
-<h2>Finalidade</h2>
+## 👨🏻‍💻 Portfólio Pessoal — Natanael Junior
 
-[![My Skills](https://skillicons.dev/icons?i=angular)](https://skillicons.dev)
+Este projeto é o meu **portfólio pessoal**, desenvolvido para apresentar minhas competências, projetos e evolução na área de desenvolvimento web.<br>
+O portfólio foi pensado para ser simples, "dirente", objetivo e visualmente agradável, permitindo que recrutadores e profissionais da área conheçam meu trabalho de forma clara e rápida.
 
-Portfolio feito, usando Angular e TypeScript, com intuito de mostrar meus conhecimentos e praticas. E como uma das finalidades em praticar tecnologias como: tailwind css, angular ui e typescript. Todo o conceito e "design" da aplicação é de rede social. O que me permitiu ser mais "informal" para mostrar minhas espertises. Espero que se divirta!
+🔗 **Acesse o portfólio:**  
+👉 [Link] (https://portfoliojunior.vercel.app/)
+👉 [Repositório] (https://github.com/njunior93/portfoliojunior)
 
-<p><a target="_blank" href="https://portfoliojunior.vercel.app/"><img src="src/assets/portfoliojunior.JPG"></a></p>
+---
+
+## 🚀 Objetivo do Projeto
+
+- Centralizar meus projetos e experiências em desenvolvimento web  
+- Demonstrar na prática minhas competências técnicas  
+- Trabalhar com um framework moderno e escalável  
+- Criar uma interface responsiva e bem estruturada  
+- Manter um projeto vivo, evoluindo conforme meus estudos e experiências  
+
+---
+
+## 🧩 Funcionalidades
+
+- 📄 Apresentação profissional e resumo da trajetória  
+- 🗂️ Seção de projetos com descrição e links  
+- 🛠️ Destaque para competências técnicas  
+- 📱 Layout responsivo para desktop e mobile  
+- 🎨 Interface moderna, limpa e focada em usabilidade  
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Frontend
+- Angular  
+- TypeScript  
+- Tailwind CSS
+
+---
+
+## 🎨 Interface
+
+A interface do portfólio foi inspirada no formato de um **perfil do Twitter**, adotando uma abordagem diferente dos portfólios tradicionais.  
+A proposta é chamar a atenção de forma criativa, oferecendo uma navegação familiar, dinâmica e intuitiva, ao mesmo tempo em que destaca informações profissionais, projetos e competências técnicas.
+
+Essa escolha de layout busca **diferenciação**, identidade visual e uma experiência agradável ao usuário, mantendo responsividade e boas práticas de UI para diferentes tamanhos de tela.
+
+
 
 
