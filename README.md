@@ -4,8 +4,7 @@ Este projeto é o meu **portfólio pessoal**, desenvolvido para apresentar minha
 O portfólio foi pensado para ser simples, "dirente", objetivo e visualmente agradável, permitindo que recrutadores e profissionais da área conheçam meu trabalho de forma clara e rápida.
 
 🔗 **Acesse o portfólio:**  
-👉 [Link] (https://portfoliojunior.vercel.app/)
-👉 [Repositório] (https://github.com/njunior93/portfoliojunior)
+👉 (Link) [https://portfoliojunior.vercel.app/]
 
 ---
 
