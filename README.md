@@ -40,11 +40,19 @@ O portfólio foi pensado para ser simples, "dirente", objetivo e visualmente agr
 
 ## 🎨 Interface
 
-A interface do portfólio foi inspirada no formato de um **perfil do Twitter**, adotando uma abordagem diferente dos portfólios tradicionais.  
-A proposta é chamar a atenção de forma criativa, oferecendo uma navegação familiar, dinâmica e intuitiva, ao mesmo tempo em que destaca informações profissionais, projetos e competências técnicas.
+A interface do portfólio foi inspirada no formato de um **perfil do Twitter**, adotando uma abordagem diferente dos portfólios tradicionais. 
 
-Essa escolha de layout busca **diferenciação**, identidade visual e uma experiência agradável ao usuário, mantendo responsividade e boas práticas de UI para diferentes tamanhos de tela.
+---
 
+## 🤝 Contribuições
 
+Sugestões, feedbacks e ideias são sempre bem-vindos.  
+Sinta-se à vontade para:
+
+- Explorar o portfólio  
+- Enviar sugestões de melhoria  
+- Compartilhar feedbacks  
+
+Toda contribuição ajuda no meu crescimento como desenvolvedor 🚀
 
 
