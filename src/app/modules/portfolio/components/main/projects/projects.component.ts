@@ -14,7 +14,7 @@ export class ProjectsComponent {
   public arrayProjects = signal<IPost[]>([
     {
       texto: 'MEU GRANDE PROJETO',
-      textoDialog: 'Esse é só um spoiler do meu grande projeto! Ainda tem muito chão pela frente. Fiz o deploy da versão offline só pra dar um gostinho do que vem aí. O back-end ainda está em construção: API em <b>Node.js + TypeORM</b>, com persistência no PostgreSQL. Logo menos, a versão completa estará no ar!',
+      textoDialog: 'A ideia surgiu numa conversa com um amigo: fazer entregas de hortifruti para fast foods pela cidade. E pensei: "consigo fazer um sistema pra isso", E fiz! Desenvolvi uma aplicação completa com gerenciamento de estoque, criação de pedidos e geração de relatórios, tudo usando React, TypeScript e NestJS + TypeORM. O projeto já está quase finalizado (uns 95%) e ficou bem próximo de um sistema real, pensado para uso no dia a dia. Então é só clicar em uma das opções abaixo e conferir',
       src: 'assets/posts/projeto_hotifacil.jpg',
       data: '25 Set 2025',
       projeto: [
