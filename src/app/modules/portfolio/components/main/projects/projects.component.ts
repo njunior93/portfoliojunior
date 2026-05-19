@@ -14,8 +14,8 @@ export class ProjectsComponent {
   public arrayProjects = signal<IPost[]>([
     {
       texto: 'Aqui nasceu um "FullStack"',
-      textoDialog: 'O Agenda Fácil nasceu como um projeto para fortalecer meus conhecimentos como desenvolvedor fullstack. Quis criar algo que realmente simulasse um sistema usado no dia a dia, então desenvolvi uma aplicação completa de agendamentos, gerenciamento de clientes e serviços, utilizando React, TypeScript, NestJS e TypeORM. Durante o desenvolvimento, consegui praticar desde a criação da interface até regras de negócio, API e banco de dados.',
-      src: 'assets/posts/agenda-facil.jpg',
+      textoDialog: 'O Agenda Fácil nasceu como um projeto para fortalecer meus conhecimentos como desenvolvedor fullstack. Quis criar algo que realmente simulasse um sistema usado no dia a dia, então desenvolvi uma aplicação de agendamentos, gerenciamento de clientes e serviços, utilizando React, TypeScript, NestJS e TypeORM. Durante o desenvolvimento, consegui praticar desde a criação da interface até regras de negócio, API e banco de dados.',
+      src: 'assets/posts/agenda-facil.JPG',
       data: '19 Mai 2026',
       projeto: [
         {
