@@ -14,7 +14,7 @@ export class ProjectsComponent {
   public arrayProjects = signal<IPost[]>([
     {
       texto: 'Desafio FullStack - Comunidade FrontEnd Fusion',
-      textoDialog: 'O projeto foi construído utilizando React + TypeScript no frontend e FastAPI no backend, com integração completa via API REST, incluindo CRUD de voluntários, filtros, paginação, validações e gerenciamento de status. Durante o desenvolvimento, aprofundei conhecimentos em arquitetura Full Stack, consumo de APIs, organização de código, componentização e boas práticas utilizando tecnologias modernas do ecossistema JavaScript e Python.',
+      textoDialog: 'O projeto foi construído utilizando React + TypeScript no frontend e FastAPI no backend, com integração completa via API REST, incluindo CRUD de voluntários, filtros, paginação, validações e gerenciamento de status. Durante o desenvolvimento, aprofundei conhecimentos em arquitetura Full Stack, consumo de APIs, organização de código, componentização e boas práticas utilizando tecnologias modernas do ecossistema JavaScript e Python. (Desafio para voluntariado em projetos, organizado pela a Comunidade FrontEnd Fusion)',
       src: 'assets/posts/DesafioFullStack.jpg',
       data: '23 Mai 2026',
       projeto: [
