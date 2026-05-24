@@ -93,33 +93,33 @@ export class ExperienciasComponent implements AfterViewInit {
     {
       titulo: 'Charmim.com',
       cargo: 'Assistente administrativo',
-      data: 'Fev de 2013 - Nov de 2014',
+      data: 'Fev de 2013 - Dez de 2014',
       descricao:
-        'Responsável pelo recebimento, preparar e encaminhar documentos e produtos logísticos, emitir notas fiscais e tirar copias e auxilio na esteira de produção na fabrica. E atuação no frente de loja como caixa.',
+        'Responsável pelo controle de recebimento de mercadorias, conferência de notas fiscais e apoio operacional no fluxo logístico da empresa. Auxilio na esteira de produção da fábrica.',
       linha: 'linha-timeline',
     },
     {
       titulo: 'Gera3 Sistemas',
       cargo: 'Estagiário de apoio técnico',
-      data: 'Jan de 2015 - Dez de 2015',
+      data: 'Mar de 2016 - Mai de 2017',
       descricao:
-        'Coleta e manutenção de banco de dados; Assistência em eventuais dúvidas, erros ou incidentes, via sistema ou banco de dados; Instalação e configuração de terminal cliente e/ou reinstalação do sistema em servidor.',
+        'Suporte técnico a clientes com análise e resolução de incidentes relacionados ao sistema ERP e Gerencial de Vendas da empresa',
       linha: 'linha-timeline',
     },
     {
       titulo: 'Gera3 Sistemas',
       cargo: 'Suporte técnico',
-      data: 'Abr de 2016 - Out de 2021',
+      data: 'Jun de 2017 - Nov de 2021',
       descricao:
-        'Auxilio no atendimento ao cliente, atualização do produto da empresa nos clientes e backup de banco de dados.',
+        'Prestação de suporte via ligação ou chat, resolvendo eventuais problemas relacionados ao produto da empresa. Coleta e manutenção de banco de dados; Assistência em eventuais dúvidas, erros ou incidentes, via sistema ou banco de dados; Instalação e configuração de terminal cliente e/ou reinstalação do sistema em servidor.',
       linha: 'linha-timeline',
     },
     {
       titulo: 'Grupo Boticário',
       cargo: 'Analista de implantação',
-      data: 'Out de 2021 - Atual',
+      data: 'Nov de 2021 - Mai de 2026',
       descricao:
-        'Responsável por configuração e implantação de sistemas como Varejo Facil, SysPDV e PDX para franqueados do Grupo Boticário.',
+        'Implantação e suporte de sistemas ERP e operação de vendas para lojas próprias e franqueados. Atuação na configuração, validação e resolução de incidentes dos sistemas Retaguarda GB, PDV GB e MOB GB. Suporte técnico e acompanhamento de demandas operacionais, garantindo estabilidade dos sistemas em ambiente de produção.',
     },
   ]);
 }
