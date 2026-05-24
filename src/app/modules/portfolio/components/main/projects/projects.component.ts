@@ -19,7 +19,8 @@ export class ProjectsComponent {
       data: '23 Mai 2026',
       projeto: [
         {
-          href: 'https://github.com/njunior93/desafio_fullStack'
+          href: 'https://github.com/njunior93/desafio_fullStack',
+          deploy: '',
         },
       ],
       alt: 'Imagem do projeto Sistema Gerenciamento de Voluntários',
