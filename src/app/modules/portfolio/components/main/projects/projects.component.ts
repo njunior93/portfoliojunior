@@ -14,7 +14,7 @@ export class ProjectsComponent {
   public arrayProjects = signal<IPost[]>([
     {
       texto: 'NerdBI - Converse com a sua Base de Dados (Em português)',
-      textoDialog: 'O projeto foi construído utilizando React + TypeScript no frontend e NestJS no backend, com integração completa via API REST, incluindo autenticação JWT, conexão segura com banco PostgreSQL do próprio usuário e um agente de IA com function calling capaz de gerar e executar SQL a partir de perguntas em linguagem natural. Durante o desenvolvimento, aprofundei conhecimentos em arquitetura Full Stack, integração com IA, segurança de dados e boas práticas utilizando tecnologias modernas do ecossistema React e Node.js. (Projeto pessoal de portfólio, com foco em IA aplicada a dados)',
+      textoDialog: 'O projeto foi construído utilizando React + TypeScript no frontend e NestJS no backend, com integração completa via API REST, incluindo autenticação JWT, conexão segura com banco PostgreSQL do próprio usuário e um agente de IA com function calling capaz de gerar e executar SQL a partir de perguntas em linguagem natural. Durante o desenvolvimento, aprofundei conhecimentos em arquitetura Full Stack, integração com IA, segurança de dados e boas práticas utilizando tecnologias modernas do ecossistema React e Node.js. (Que tal trocar uma ideia com seu banco de dados?)',
       src: 'assets/posts/NerdBi.JPG',
       data: '16 Jun 2026',
       projeto: [
