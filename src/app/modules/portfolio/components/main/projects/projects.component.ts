@@ -35,7 +35,7 @@ export class ProjectsComponent {
       projeto: [
         {
           href: 'https://github.com/njunior93/desafio_fullStack',
-          deploy: '',
+          deploy: 'https://crud-gerenciamento-voluntarios.vercel.app/',
         },
       ],
       alt: 'Imagem do projeto Sistema Gerenciamento de Voluntários',
